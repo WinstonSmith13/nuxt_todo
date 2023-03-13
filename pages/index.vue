@@ -14,8 +14,8 @@
       </button>
     </div>
     <div class="tasks">
-      <div class="task">
-        <p />
+      <div v-for="task in $store.state.task " :key="task.index" class="task">
+        {{ task }}
         <div class="buttons">
           <button>DONE</button>
           <button class="delete">
@@ -38,6 +38,7 @@ export default {
     addTask () {
       if (this.newTask) {
         this.$store.commit('addTask', this.newTask)
+        this.newTask = ''
       }
     }
   }
