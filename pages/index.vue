@@ -14,14 +14,8 @@
       </button>
     </div>
     <div class="tasks">
-      <Task v-for="(task,i) in $store.state.task " :key="i" :task="task" />
+      <TaskComponent v-for="(task,i) in $store.state.task " :key="i" :task="task" />
       {{ task }}
-      <div class="buttons">
-        <button>DONE</button>
-        <button class="delete">
-          DELETE
-        </button>
-      </div>
     </div>
   </main>
 </template>
