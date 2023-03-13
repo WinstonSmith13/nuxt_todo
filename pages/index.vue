@@ -14,14 +14,13 @@
       </button>
     </div>
     <div class="tasks">
-      <div v-for="task in $store.state.task " :key="task.index" class="task">
-        {{ task }}
-        <div class="buttons">
-          <button>DONE</button>
-          <button class="delete">
-            DELETE
-          </button>
-        </div>
+      <Task v-for="(task,i) in $store.state.task " :key="i" :task="task" />
+      {{ task }}
+      <div class="buttons">
+        <button>DONE</button>
+        <button class="delete">
+          DELETE
+        </button>
       </div>
     </div>
   </main>
